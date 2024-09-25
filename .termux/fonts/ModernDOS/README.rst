@@ -5,7 +5,7 @@ Modern DOS
 :Version: 1.10
 :Source: https://fonts-online.ru/fonts/modern-dos-9x16
 :License: SIL OPEN FONT LICENSE Version 1.1
-:Patched by: `Carl X. Su <https://github.com/bcbcarl>`_
+:Patched by: `International Business Machines <https://github.com/IBM>`_
 
 Anonymous Pro (2009) is a family of four fixed-width fonts designed
 especially with coding in mind. Characters that could be mistaken for
