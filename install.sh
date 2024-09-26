@@ -3,7 +3,7 @@ termux-setup-storage
 # APT
 apt update
 # Git clone
-git clone https://github.com/HeySimSimi/TMUX-DOS.git "$HOME/termux-ohmyzsh" --depth 1
+git clone https://github.com/HeySimSimi/TMUX-DOS.git "$HOME/TMUX-DOS" --depth 1
 # Theme install
 echo "TMUX-DOS install complete!\nChoose your color scheme now~"
 $HOME/.termux/colors.sh
