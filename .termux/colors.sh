@@ -1,30 +1,25 @@
-#!/data/data/com.termux/files/usr/bin/bash
-DIR=`cd $(dirname $0); pwd`
-COLORS_DIR=$DIR/colors
-count=0
+#!/data/data/com.termux/files/usr/bin/sh
 
-echo -e "The default color theme is Tango.\nYou can choose another one from the list below";
+# Specify the path to the colors.properties file
+COLORS_FILE="$HOME/.termux/colors.properties"
 
-for colors in "$COLORS_DIR"/*; do
-  colors_name[count]=$( echo $colors | awk -F'/' '{print $NF}' )
-  echo -e "($count) ${colors_name[count]}";
-  count=$(( $count + 1 ));
-done;
-count=$(( $count - 1 ));
+# Write neutral grey colors to the file
+echo 'color0=#808080' > $COLORS_FILE
+echo 'color1=#808080' >> $COLORS_FILE
+echo 'color2=#808080' >> $COLORS_FILE
+echo 'color3=#808080' >> $COLORS_FILE
+echo 'color4=#808080' >> $COLORS_FILE
+echo 'color5=#808080' >> $COLORS_FILE
+echo 'color6=#808080' >> $COLORS_FILE
+echo 'color7=#808080' >> $COLORS_FILE
+echo 'color8=#808080' >> $COLORS_FILE
+echo 'color9=#808080' >> $COLORS_FILE
+echo 'color10=#808080' >> $COLORS_FILE
+echo 'color11=#808080' >> $COLORS_FILE
+echo 'color12=#808080' >> $COLORS_FILE
+echo 'color13=#808080' >> $COLORS_FILE
+echo 'color14=#808080' >> $COLORS_FILE
+echo 'color15=#808080' >> $COLORS_FILE
 
-while true; do
-  read -p 'Enter a number, leave blank to not to change:' number;
-  if [[ -z "$number" ]]; then
-    break;
-  elif ! [[ $number =~ ^[0-9]+$ ]]; then
-    echo "Please enter the right number!";
-  elif (( $number>=0 && $number<=$count )); then
-    eval choice=${colors_name[number]};
-    cp -fr "$COLORS_DIR/$choice" "$DIR/colors.properties";
-    break;
-  else
-    echo "Please enter the right number!";
-  fi
-done
-
+# Reload Termux settings to apply the new colors
 termux-reload-settings
